@@ -368,7 +368,7 @@ const TreeNode: React.FC<Readonly<TreeNodeProps>> = props => {
     }
 
     return (
-      <span
+      <div
         ref={selectHandleRef}
         title={typeof title === 'string' ? title : ''}
         className={classNames(wrapClass, `${wrapClass}-${nodeState || 'normal'}`, {
@@ -381,14 +381,14 @@ const TreeNode: React.FC<Readonly<TreeNodeProps>> = props => {
         onDoubleClick={onSelectorDoubleClick}
       >
         {$icon}
-        <span
+        <div
           className={classNames(`${context.prefixCls}-title`, treeClassNames?.itemTitle)}
           style={styles?.itemTitle}
         >
           {titleNode}
-        </span>
+        </div>
         {dropIndicatorNode}
-      </span>
+      </div>
     );
   }, [
     context.prefixCls,
